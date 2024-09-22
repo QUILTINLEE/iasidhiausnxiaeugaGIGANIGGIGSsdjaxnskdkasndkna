@@ -2,6 +2,28 @@
 #include <pthread.h>
 
 
+// Thread 1       || Thread 2
+//                || 
+// int a = 5;     ||int x = 5;
+// int b = 15;    ||int y = 10;
+// int c = 0;     ||int z = 0;
+// c += a + b;    ||z += x + y;
+
+
+// Thread 1       || Thread 2
+//                || 
+// int a = 5;     ||
+//                ||int x = 5;
+// int b = 15;    ||
+// int c = 0      ||
+//                ||int y = 10;
+//                ||int z = 0;
+// c += a + b;    ||
+//                ||z += x + y;
+
+
+
+
 int a = 5;
 int b = 15;
 int c = 0;
